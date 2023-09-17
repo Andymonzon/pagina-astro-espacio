@@ -1,4 +1,7 @@
+const { hostname } = require('os')
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+}
 
 module.exports = nextConfig
