@@ -19,8 +19,8 @@ function WelcomeSection () {
     const handleMouseMove = (e: MouseEvent) => {
       const { pageX, pageY } = e
 
-      const rotationX = ((pageX - halfWidth) / halfWidth) * 17
-      const rotationY = ((pageY - halfHeight) / halfHeight) * 17
+      const rotationX = ((pageX - halfWidth) / halfWidth) * 20
+      const rotationY = ((pageY - halfHeight) / halfHeight) * 20
       setPosition({ x: rotationX, y: rotationY })
     }
 
@@ -43,7 +43,10 @@ function WelcomeSection () {
     >
       <div className='flex items-center relative' style={{ perspective: '1000px' }}>
         <h1 className='text-7xl font-extralight tracking-[25px]'
-          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>ASTRO</h1>
+          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>
+          ASTR
+          <span className='tracking-[0px]'>O</span>
+        </h1>
         <div className='absolute top-[-130%] left-[11%] blur border rounded-full w-[250px] h-[250px]'
           style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}></div>
       </div>

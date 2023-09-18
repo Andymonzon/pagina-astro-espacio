@@ -11,3 +11,7 @@
 .hover-lines:hover::before{
   width: 100%;
 }
+
+.active:before{
+  width: 100%;
+}
