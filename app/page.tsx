@@ -7,18 +7,18 @@ export default function Home () {
   return (
     <main className='ralative w-full h-screen overflow-auto snap-y snap-mandatory'>
       <div className='imgUrl'>
-        <div className='snap-center'>
+        <div className='snap-center' id='home'>
           <ContainerObserver nameId={Routes.HOME}>
             <WelcomeSection />
           </ContainerObserver>
         </div>
 
-        <div className='snap-center'>
+        <div className='snap-center' id='information'>
           <ContainerObserver nameId={Routes.INFORMATION}>
             <div className='h-screen' />
           </ContainerObserver>
         </div>
-        <div className='snap-center'>
+        <div className='snap-center' id='mars'>
           <ContainerObserver nameId={Routes.MARS}>
             <WelcomeSection />
           </ContainerObserver>

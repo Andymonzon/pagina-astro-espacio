@@ -28,7 +28,7 @@ function Navbar () {
   return (
     <header className='w-full py-5 fixed flex items-center'>
       <nav className='mx-auto'>
-        <ul className='flex'>
+        <ul className='flex gap-1'>
           {
             Routes.map((route) => {
               return (
