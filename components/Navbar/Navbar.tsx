@@ -1,21 +1,22 @@
 import Link from 'next/link'
+import './Navbar.css'
 
 const Routes = [
   {
     name: 'HOME',
-    href: '#'
+    href: '#home'
   },
   {
     name: 'INFORMATION',
-    href: '#'
+    href: '#information'
   },
   {
     name: 'MARS',
-    href: '#'
+    href: '#mars'
   },
   {
     name: 'GALLERY',
-    href: '#'
+    href: '#gallery'
   }
 ]
 
@@ -28,7 +29,7 @@ function Navbar () {
             Routes.map((route) => {
               return (
                 <li key={route.href}>
-                  <Link className='py-1 px-4 font-normal text-gray-200 text-sm hover:bg-[#f1f1f155]' href={route.href}>{route.name}</Link>
+                  <Link className='relative hover-lines py-1 px-4 font-normal text-gray-200 text-sm rounded' href={route.href}>{route.name}</Link>
                 </li>
               )
             })

@@ -6,7 +6,7 @@ import { Raleway } from 'next/font/google'
 const raleway = Raleway({
   weight: ['100', '400', '700'],
   subsets: ['latin'],
-  display: 'auto'
+  display: 'block'
 })
 
 export const metadata: Metadata = {

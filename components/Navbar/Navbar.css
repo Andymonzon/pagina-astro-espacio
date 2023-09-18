@@ -1,0 +1,13 @@
+.hover-lines::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0px;
+  border-bottom: 1px solid #E5E7EB;
+  transition: all .2s;
+}
+
+.hover-lines:hover::before{
+  width: 100%;
+}
