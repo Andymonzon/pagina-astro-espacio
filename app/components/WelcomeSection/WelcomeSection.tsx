@@ -11,7 +11,7 @@ function WelcomeSection () {
   useEffect(() => {
     if (ref.current === null) return
 
-    const { width, height } = ref.current?.getBoundingClientRect()
+    const { width, height } = ref.current.getBoundingClientRect()
 
     const halfWidth = width / 2
     const halfHeight = height / 2
@@ -19,8 +19,8 @@ function WelcomeSection () {
     const handleMouseMove = (e: MouseEvent) => {
       const { pageX, pageY } = e
 
-      const rotationX = ((pageX - halfWidth) / halfWidth) * 10
-      const rotationY = ((pageY - halfHeight) / halfHeight) * 10
+      const rotationX = ((pageX - halfWidth) / halfWidth) * 17
+      const rotationY = ((pageY - halfHeight) / halfHeight) * 17
       setPosition({ x: rotationX, y: rotationY })
     }
 
@@ -35,12 +35,19 @@ function WelcomeSection () {
   }, [enabled])
 
   return (
-    <section ref={ref} onMouseEnter={() => { setEnabled(true) }} onMouseLeave={() => { setEnabled(false) }} className='w-full h-screen flex items-center justify-center'>
+    <section
+      ref={ref}
+      onMouseEnter={() => { setEnabled(true) }}
+      onMouseLeave={() => { setEnabled(false) }}
+      className='w-full h-screen flex items-center justify-center'
+    >
       <div className='flex items-center relative' style={{ perspective: '1000px' }}>
-        <h1 className='text-7xl font-extralight tracking-[25px]' style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)` }}>ASTRO</h1>
-        <div className='absolute top-[-130%] left-[11%] blur border rounded-full w-[250px] h-[250px]' style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)` }}></div>
+        <h1 className='text-7xl font-extralight tracking-[25px]'
+          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>ASTRO</h1>
+        <div className='absolute top-[-130%] left-[11%] blur border rounded-full w-[250px] h-[250px]'
+          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}></div>
       </div>
-    </section>
+    </section >
   )
 }
 
