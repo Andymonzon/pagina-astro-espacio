@@ -1,5 +1,6 @@
 'use client'
 
+import { IconChevronCompactDown } from '@tabler/icons-react'
 import { useEffect, useRef, useState } from 'react'
 
 function WelcomeSection () {
@@ -41,14 +42,21 @@ function WelcomeSection () {
       onMouseLeave={() => { setEnabled(false) }}
       className='w-full h-screen flex items-center justify-center'
     >
-      <div className='flex items-center relative' style={{ perspective: '1000px' }}>
-        <h1 className='text-7xl font-extralight tracking-[25px]'
-          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>
-          ASTR
-          <span className='tracking-[0px]'>O</span>
-        </h1>
-        <div className='absolute top-[-130%] left-[11%] blur border rounded-full w-[250px] h-[250px]'
-          style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}></div>
+      <div className='flex flex-col items-center justify-center h-[calc(100vh-125px)]'>
+        <div className='flex flex-grow items-center relative' style={{ perspective: '1000px' }}>
+          <h1 className='text-7xl ml-[6px] font-extralight tracking-[25px]'
+            style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>
+            ASTR
+            <span className='tracking-[0px]'>O</span>
+          </h1>
+          <div className='absolute flex flex-grow left-[13%] blur border rounded-full w-[250px] h-[250px]'
+            style={{ transform: `rotateX(${position.x}deg) rotateY(${position.y}deg)`, transitionDuration: '300ms', transitionTimingFunction: `${enabled ? 'ease-out' : 'none'}` }}>
+          </div>
+        </div>
+
+        <div>
+          <IconChevronCompactDown size={30} className='animate-bounce' />
+        </div>
       </div>
     </section >
   )
