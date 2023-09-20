@@ -5,7 +5,7 @@ export const useOnScreen = (ref: React.RefObject<any>) => {
 
   const observer = new IntersectionObserver(([entry]) => {
     setIsOnScreen(entry.isIntersecting)
-  }, { root: null, rootMargin: '0px', threshold: 0.9 })
+  }, { root: null, rootMargin: '0px', threshold: 0.5 })
 
   useEffect(() => {
     observer.observe(ref.current)

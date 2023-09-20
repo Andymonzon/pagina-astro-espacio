@@ -54,9 +54,9 @@ async function InformationSection () {
         </div>
 
         <div className='
-          lg:block w-auto relative md:after:content-[""] duration-300 after:duration-300 custom-hover after:absolute after:rounded
-          md:after:w-[250px] md:after:h-[300px] after:border-2 lg:after:left-[14px] lg:after:top-[14px]
-          md:after:left-[14px] md:after:top-[14px] after:z-[10]'>
+          lg:block w-auto relative md:after:content-[""] duration-300 md:after:duration-300 custom-hover md:after:absolute md:after:rounded
+          md:after:w-[250px] md:after:h-[300px] md:after:border-2 lg:after:left-[14px] lg:after:top-[14px]
+          md:after:left-[14px] md:after:top-[14px] md:after:z-[10]'>
           <Link href={information.hdurl} target='_blank'>
             <Image className='object-cover h-auto w-full md:h-[300px] md:w-[250px] relative z-[20] rounded' src={information.url} alt={information.title} width={400} height={400} priority />
           </Link>
