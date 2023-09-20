@@ -33,11 +33,11 @@ async function InformationSection () {
   const information = await fetchInformation()
 
   return (
-    <section className={`w-full h-screen flex items-center justify-center flex-col ${inter.className}`}>
-      <main className='w-full px-20 flex relative gap-10 justify-center'>
+    <section className={`w-full min-h-screen md:h-screen flex items-center justify-center flex-col ${inter.className}`}>
+      <main className='w-full md:px-20 px-10 flex flex-col md:flex-row items-center relative gap-10 justify-center'>
 
-        <div className='w-[50%] flex flex-col gap-5 justify-center'>
-          <div className='w-[80%] flex flex-col gap-5 justify-center'>
+        <div className='md:w-[50%] flex flex-col gap-5 justify-center'>
+          <div className='md:w-[80%] flex flex-col gap-5 justify-center'>
             <header>
               <h2 className='flex text-xs items-center text-gray-300'>
                 <span className='w-[30px] h-[1px] bg-gray-300 mr-2'></span>
@@ -53,9 +53,12 @@ async function InformationSection () {
           </div>
         </div>
 
-        <div className='w-auto relative after:content-[""] duration-300 after:duration-300 custom-hover after:absolute after:rounded after:w-full after:h-full after:border-2 after:left-[14px] after:top-[14px] after:z-[10]'>
+        <div className='
+          lg:block w-auto relative md:after:content-[""] duration-300 after:duration-300 custom-hover after:absolute after:rounded
+          md:after:w-[250px] md:after:h-[300px] after:border-2 lg:after:left-[14px] lg:after:top-[14px]
+          md:after:left-[14px] md:after:top-[14px] after:z-[10]'>
           <Link href={information.hdurl} target='_blank'>
-            <Image className='object-cover h-[300px] w-[250px] relative z-[20] rounded' src={information.url} alt={information.title} width={400} height={400} priority />
+            <Image className='object-cover h-auto w-full md:h-[300px] md:w-[250px] relative z-[20] rounded' src={information.url} alt={information.title} width={400} height={400} priority />
           </Link>
         </div>
       </main>

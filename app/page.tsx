@@ -5,7 +5,7 @@ import { Routes } from '@/models'
 
 export default function Home () {
   return (
-    <main className='ralative w-full h-screen overflow-auto snap-y snap-mandatory'>
+    <main className='ralative w-full md:h-screen overflow-auto snap-y snap-mandatory'>
       <div className='imgUrl'>
         <div className='snap-center' id='home'>
           <ContainerObserver nameId={Routes.HOME}>
