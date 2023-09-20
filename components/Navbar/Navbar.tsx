@@ -6,19 +6,19 @@ import { useNavContext } from '@/context'
 const Routes = [
   {
     name: 'HOME',
-    href: '#home'
+    href: 'home'
   },
   {
-    name: 'INFORMATION',
-    href: '#information'
+    name: 'NEWS',
+    href: 'news'
   },
   {
     name: 'MARS',
-    href: '#mars'
+    href: 'mars'
   },
   {
     name: 'GALLERY',
-    href: '#gallery'
+    href: 'gallery'
   }
 ]
 
@@ -33,7 +33,7 @@ function Navbar () {
             Routes.map((route) => {
               return (
                 <li key={route.href}>
-                  <Link className={`relative hover-lines py-1 px-4 font-normal text-gray-200 text-sm rounded ${activeLinkId === route.name ? 'active' : ''}`} href={route.href}>{route.name}</Link>
+                  <Link className={`relative hover-lines py-1 px-4 font-normal text-gray-200 text-sm rounded ${activeLinkId === route.href ? 'active' : ''}`} href={`#${route.href}`}>{route.name}</Link>
                 </li>
               )
             })

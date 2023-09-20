@@ -1,5 +1,5 @@
 import { ContainerObserver } from '@/components'
-import { WelcomeSection } from './components'
+import { InformationSection, WelcomeSection } from './components'
 import './home.css'
 import { Routes } from '@/models'
 
@@ -13,9 +13,9 @@ export default function Home () {
           </ContainerObserver>
         </div>
 
-        <div className='snap-center' id='information'>
-          <ContainerObserver nameId={Routes.INFORMATION}>
-            <div className='h-screen' />
+        <div className='snap-center' id='news'>
+          <ContainerObserver nameId={Routes.NEW}>
+            <InformationSection />
           </ContainerObserver>
         </div>
         <div className='snap-center' id='mars'>

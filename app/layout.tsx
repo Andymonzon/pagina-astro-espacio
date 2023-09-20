@@ -7,6 +7,7 @@ import { NavProvider } from '@/context'
 const raleway = Raleway({
   weight: ['100', '400', '700'],
   subsets: ['latin'],
+  variable: '--font-Raleway',
   display: 'block'
 })
 
