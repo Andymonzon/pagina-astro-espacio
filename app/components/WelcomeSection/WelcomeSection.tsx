@@ -1,45 +1,16 @@
 'use client'
 
 import { IconChevronCompactDown } from '@tabler/icons-react'
-import { useEffect, useRef, useState } from 'react'
+import { usePerspective } from '../InformationSection/hooks/usePerspecive'
 
 function WelcomeSection () {
-  const [enabled, setEnabled] = useState(false)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (ref.current === null) return
-
-    const { width, height } = ref.current.getBoundingClientRect()
-
-    const halfWidth = width / 2
-    const halfHeight = height / 2
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const { pageX, pageY } = e
-
-      const rotationX = ((pageX - halfWidth) / halfWidth) * 20
-      const rotationY = ((pageY - halfHeight) / halfHeight) * 20
-      setPosition({ x: rotationX, y: rotationY })
-    }
-
-    ref.current.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      if (ref.current != null) {
-        ref.current.removeEventListener('mousemove', handleMouseMove)
-        setPosition({ x: 0, y: 0 })
-      }
-    }
-  }, [enabled])
+  const { handleMouseEnter, handleMouseLeave, ref, position, enabled } = usePerspective()
 
   return (
     <section
       ref={ref}
-      onMouseEnter={() => { setEnabled(true) }}
-      onMouseLeave={() => { setEnabled(false) }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className='w-full h-screen flex items-center justify-center'
     >
       <div className='flex flex-col items-center justify-center h-[calc(100vh-125px)]'>

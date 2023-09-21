@@ -51,7 +51,7 @@ function Navbar () {
             Routes.map((route) => {
               return (
                 <li key={route.href}>
-                  <Link scroll={false} className={`relative hover-lines py-1 px-4 font-normal text-sm rounded ${activeLinkId === route.href ? 'active' : ''}`} href={`#${route.href}`}>{route.name}</Link>
+                  <Link className={`relative hover-lines py-1 px-4 font-normal text-sm rounded ${activeLinkId === route.href ? 'active' : ''}`} href={`#${route.href}`}>{route.name}</Link>
                 </li>
               )
             })
@@ -60,7 +60,7 @@ function Navbar () {
       </nav>
 
       {/* phone */}
-      <nav className={`min-h-screen sm:hidden fixed p-5 w-[90%] top-0 right-0 duration-300 bg-black/50 backdrop-blur-lg flex flex-col gap-10 items-end ${click ? 'translate-x-[0%]' : 'translate-x-[100%]'}`}>
+      <nav className={`min-h-screen sm:hidden fixed p-5 w-[90%] top-0 right-0 duration-300 bg-zinc-700/50 backdrop-blur-lg flex flex-col gap-10 items-end ${click ? 'translate-x-[0%]' : 'translate-x-[100%]'}`}>
         <header className='flex items-center justify-center w-full relative'>
           <h2 className='text-xl text-center'>Menu</h2>
           <button aria-label='Close Menu' className='absolute right-2' onClick={closeMenu}>

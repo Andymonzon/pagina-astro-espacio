@@ -1,5 +1,5 @@
 .imgUrl{
-  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('https://cdn.discordapp.com/attachments/1152977837360414763/1152979386824400916/espacioAlargado.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../public/imagen-de-fondo.avif');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

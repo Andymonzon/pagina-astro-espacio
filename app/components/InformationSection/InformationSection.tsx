@@ -3,6 +3,7 @@ import './InformationSection.css'
 import { getData } from '@/services'
 import Image from 'next/image'
 import Link from 'next/link'
+import { imageBlur } from '@/app/models/image.blur'
 
 export interface IInformation {
   date: Date
@@ -14,12 +15,10 @@ export interface IInformation {
   url: string
 }
 
-const API_KEY = process.env.API_KEY_NASA
-
-const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
+const url = 'https://api.nasa.gov/planetary/apod'
 
 const fetchInformation = async () => {
-  return await getData(url) as IInformation
+  return await getData({ url, dataCache: 'no-store' }) as IInformation
 }
 
 const inter = Inter({
@@ -32,8 +31,10 @@ const inter = Inter({
 async function InformationSection () {
   const information = await fetchInformation()
 
+  if (information == null) return null
+
   return (
-    <section className={`w-full min-h-screen md:h-screen flex items-center justify-center flex-col ${inter.className}`}>
+    <section className={`w-full min-h-screen py-5 md:p-0 md:h-screen flex items-center justify-center flex-col ${inter.className}`}>
       <main className='w-full md:px-20 px-10 flex flex-col md:flex-row items-center relative gap-10 justify-center'>
 
         <div className='md:w-[50%] flex flex-col gap-5 justify-center'>
@@ -58,7 +59,7 @@ async function InformationSection () {
           md:after:w-[250px] md:after:h-[300px] md:after:border-2 lg:after:left-[14px] lg:after:top-[14px]
           md:after:left-[14px] md:after:top-[14px] md:after:z-[10]'>
           <Link href={information.hdurl} target='_blank'>
-            <Image className='object-cover h-auto w-full md:h-[300px] md:w-[250px] relative z-[20] rounded' src={information.url} alt={information.title} width={400} height={400} priority />
+            <Image blurDataURL={imageBlur} placeholder='blur' className='object-cover h-auto w-full md:h-[300px] md:w-[250px] relative z-[20] rounded' src={information.url} alt={information.title} width={250} height={300} quality={70} priority />
           </Link>
         </div>
       </main>

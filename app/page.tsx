@@ -1,11 +1,11 @@
 import { ContainerObserver } from '@/components'
-import { InformationSection, WelcomeSection } from './components'
+import { WelcomeSection, InformationSection } from './components'
 import './home.css'
 import { Routes } from '@/models'
 
 export default function Home () {
   return (
-    <main className='ralative w-full md:h-screen overflow-auto snap-y snap-mandatory'>
+    < main className='ralative w-full md:h-screen overflow-auto snap-y snap-mandatory' >
       <div className='imgUrl'>
         <div className='snap-center' id='home'>
           <ContainerObserver nameId={Routes.HOME}>
@@ -20,10 +20,10 @@ export default function Home () {
         </div>
         <div className='snap-center' id='mars'>
           <ContainerObserver nameId={Routes.MARS}>
-            <WelcomeSection />
+            <div style={{ height: '100vh' }}>hola</div>
           </ContainerObserver>
         </div>
       </div>
-    </main>
+    </main >
   )
 }
