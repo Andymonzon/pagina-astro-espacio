@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import { ContainerObserver } from '@/components'
-import { WelcomeSection, InformationSection, MarsSection } from './components'
+import { WelcomeSection, InformationSection, MarsSection, Footer } from './components'
 import './home.css'
 import { Routes } from '@/models'
 
@@ -29,6 +29,9 @@ export default function Home () {
           <ContainerObserver nameId={Routes.MARS}>
             <MarsSection />
           </ContainerObserver>
+        </div>
+        <div className='snap-center'>
+          <Footer />
         </div>
       </div>
     </main >

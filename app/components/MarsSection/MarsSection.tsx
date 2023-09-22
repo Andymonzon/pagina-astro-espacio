@@ -30,10 +30,10 @@ async function MarsSection () {
             <div className='flex flex-col items-center lg:w-[150%] justify-center gap-5 bg-zinc-700/10 backdrop-blur rounded pt-24 mt-20 md:mt-20 md:pt-40'>
               <div>
                 <h3 className='text-center text-lg'>SOL 681</h3>
-                <p className='text-xs'>October 25, 2020</p>
+                <p className='text-xs font-light'>October 25, 2020</p>
               </div>
               <div>
-                <p className='text-xl md:text-3xl'>{celsiusToFahrenheit(dataMars[681].AT.av).toFixed(1)}°F</p>
+                <p className='text-xl md:text-4xl'>{celsiusToFahrenheit(dataMars[681].AT.av).toFixed(1)}°F</p>
               </div>
               <div className='flex gap-2 flex-wrap items-center justify-center p-5'>
                 <p className='text-xs'>Max: {celsiusToFahrenheit(dataMars[681].AT.mx).toFixed(1)}°F</p>
