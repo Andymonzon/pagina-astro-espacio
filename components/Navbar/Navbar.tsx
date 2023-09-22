@@ -72,7 +72,7 @@ function Navbar () {
             Routes.map((route) => {
               return (
                 <li key={route.href}>
-                  <Link scroll={false} onClick={() => { setClick(false) }} className={`relative hover-lines py-1 px-4 font-normal text-gray-200 text-sm rounded ${activeLinkId === route.href ? 'active' : ''}`} href={`#${route.href}`}>{route.name}</Link>
+                  <Link onClick={() => { setClick(false) }} className={`relative hover-lines py-1 px-4 font-normal text-gray-200 text-sm rounded ${activeLinkId === route.href ? 'active' : ''}`} href={`#${route.href}`}>{route.name}</Link>
                 </li>
               )
             })
