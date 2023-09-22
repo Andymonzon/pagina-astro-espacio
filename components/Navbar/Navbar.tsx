@@ -17,10 +17,6 @@ const Routes = [
   {
     name: 'MARS',
     href: 'mars'
-  },
-  {
-    name: 'GALLERY',
-    href: 'gallery'
   }
 ]
 
