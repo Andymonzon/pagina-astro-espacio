@@ -1,32 +1,14 @@
-import { Inter } from 'next/font/google'
 import './InformationSection.css'
 import { getData } from '@/services'
 import Image from 'next/image'
 import Link from 'next/link'
 import { imageBlur } from '@/app/models/image.blur'
-
-export interface IInformation {
-  date: Date
-  explanation: string
-  hdurl: string
-  media_type: string
-  service_version: string
-  title: string
-  url: string
-}
-
-const url = 'https://api.nasa.gov/planetary/apod'
+import { type IInformation } from '@/models'
 
 const fetchInformation = async () => {
+  const url = 'https://api.nasa.gov/planetary/apod?'
   return await getData({ url, dataCache: 'no-store' }) as IInformation
 }
-
-const inter = Inter({
-  weight: ['100', '400', '700'],
-  subsets: ['latin'],
-  variable: '--font-Inter',
-  display: 'block'
-})
 
 async function InformationSection () {
   const information = await fetchInformation()
@@ -34,7 +16,7 @@ async function InformationSection () {
   if (information == null) return null
 
   return (
-    <section className={`w-full min-h-screen py-5 md:p-0 md:h-screen flex items-center justify-center flex-col ${inter.className}`}>
+    <section className='w-full min-h-screen py-5 md:p-0 md:h-screen flex items-center justify-center flex-col'>
       <main className='w-full md:px-20 px-10 flex flex-col md:flex-row items-center relative gap-10 justify-center'>
 
         <div className='md:w-[50%] flex flex-col gap-5 justify-center'>

@@ -1,7 +1,14 @@
+import { Inter } from 'next/font/google'
 import { ContainerObserver } from '@/components'
-import { WelcomeSection, InformationSection } from './components'
+import { WelcomeSection, InformationSection, MarsSection } from './components'
 import './home.css'
 import { Routes } from '@/models'
+
+const inter = Inter({
+  weight: ['100', '400', '700'],
+  subsets: ['latin'],
+  display: 'block'
+})
 
 export default function Home () {
   return (
@@ -13,14 +20,14 @@ export default function Home () {
           </ContainerObserver>
         </div>
 
-        <div className='snap-center' id='news'>
+        <div className={`snap-center ${inter.className}`} id='news'>
           <ContainerObserver nameId={Routes.NEW}>
             <InformationSection />
           </ContainerObserver>
         </div>
-        <div className='snap-center' id='mars'>
+        <div className={`snap-center ${inter.className}`} id='mars'>
           <ContainerObserver nameId={Routes.MARS}>
-            <div style={{ height: '100vh' }}>hola</div>
+            <MarsSection />
           </ContainerObserver>
         </div>
       </div>
